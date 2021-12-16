@@ -1,6 +1,9 @@
 job('Node.js Example') {
     scm {
-        git('https://github.com/munawar-netsol/nodejs-express-simple.git')
+        git('git://github.com/munawar-netsol/nodejs-express-simple.git') { node ->
+            node / gitConfigName('munawersheikh')
+            node / gitConfigEmail('munawersheikh@gmail.com')
+        }
     }
     triggers {
         scm('H/5 * * * * *')
